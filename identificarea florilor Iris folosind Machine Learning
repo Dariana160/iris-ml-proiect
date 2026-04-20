@@ -1,0 +1,83 @@
+ 1.  Alegerea bazei de date si initializarea proiectului 
+
+Pentru acest proiect am ales setul de date Iris, disponibil pe Kaggle:
+https://www.kaggle.com/datasets/uciml/iris
+
+Am ales acest set de date deoarece este unul dintre cele mai utilizate în Machine Learning pentru probleme de clasificare. Este relativ mic, ușor de înțeles și potrivit pentru a învăța etapele de bază ale unui model de clasificare.
+
+Datasetul conține 150 de exemple de flori, împărțite în 3 clase:
+	•	Iris-setosa
+	•	Iris-versicolor
+	•	Iris-virginica
+
+Pentru fiecare floare sunt disponibile 4 caracteristici numerice:
+	•	lungimea sepalei
+	•	lățimea sepalei
+	•	lungimea petalei
+	•	lățimea petale
+
+Am creat un repository pe GitHub în care am organizat proiectul (foldere pentru date și cod) și am adăugat profesorul ca și colaborator. Am folosit Git pentru a salva progresul proiectului în mai multe etape (commit-uri).
+
+ 2. Incarcarea, analiza si curatarea datelor
+
+În această etapă am folosit biblioteca pandas pentru a încărca datele și pentru a analiza structura acestora.
+
+După încărcare, am verificat:
+	•	dimensiunea datasetului (150 rânduri și 5 coloane)
+	•	tipurile de date (4 coloane numerice și 1 coloană categorială)
+	•	existența valorilor lipsă
+
+Am constatat că:
+	•	nu există valori lipsă în dataset
+	•	datele sunt bine structurate și nu necesită curățare complexă
+	•	fiecare specie are exact 50 de exemple, deci datasetul este echilibrat
+
+Am analizat și distribuția valorilor folosind funcția describe(), pentru a observa intervalele și mediile fiecărei caracteristici.
+În ceea ce privește anomaliile (outliers), nu am identificat valori extreme care să influențeze negativ modelul, astfel că nu a fost necesară eliminarea acestora.
+
+ 3.  Analiza caracteristicilor si indicatorilor 
+
+În această etapă am analizat relațiile dintre variabile și importanța lor în procesul de clasificare.
+
+Am calculat corelațiile dintre caracteristici și am observat că:
+	•	lungimea petalei și lățimea petalei au o corelație foarte mare
+	•	aceste caracteristici sunt foarte importante pentru diferențierea speciilor
+
+Am analizat și câteva concepte teoretice importante:
+	•	Gini Index – este un indicator care măsoară cât de „amestecate” sunt datele într-un nod. Dacă valoarea este mică, înseamnă că datele sunt bine separate. Este folosit în algoritmul Decision Tree.
+	•	Information Gain – arată cât de mult ajută o caracteristică la separarea datelor în clase diferite. Cu cât valoarea este mai mare, cu atât caracteristica este mai utilă.
+
+Aceste concepte sunt importante pentru înțelegerea modului în care funcționează algoritmii de clasificare.
+
+  4. Construirea si evaluarea modelelor 
+
+ În această etapă am analizat relațiile dintre variabile și importanța lor în procesul de clasificare.
+
+Am calculat corelațiile dintre caracteristici și am observat că:
+	•	lungimea petalei și lățimea petalei au o corelație foarte mare
+	•	aceste caracteristici sunt foarte importante pentru diferențierea speciilor
+
+Am analizat și câteva concepte teoretice importante:
+	•	Gini Index – este un indicator care măsoară cât de „amestecate” sunt datele într-un nod. Dacă valoarea este mică, înseamnă că datele sunt bine separate. Este folosit în algoritmul Decision Tree.
+	•	Information Gain – arată cât de mult ajută o caracteristică la separarea datelor în clase diferite. Cu cât valoarea este mai mare, cu atât caracteristica este mai utilă.
+
+Aceste concepte sunt importante pentru înțelegerea modului în care funcționează algoritmii de clasificare.
+ Pentru rezolvarea problemei am ales trei algoritmi diferiți:
+	•	K-Nearest Neighbors (KNN)
+	•	Decision Tree
+	•	Logistic Regression
+
+Am împărțit datasetul în două părți:
+	•	set de antrenare (80%)
+	•	set de testare (20%)
+
+Modelele au fost antrenate pe datele de antrenare și testate pe datele de testare.
+
+Pentru evaluare am folosit acuratețea (accuracy), care arată procentul de predicții corecte.
+
+Rezultatele obținute au fost:
+	•	KNN – acuratețe foarte mare
+	•	Decision Tree – rezultate bune
+	•	Logistic Regression – rezultate apropiate
+
+Am observat că modelul KNN oferă cele mai bune rezultate pentru acest dataset. De asemenea, am testat mai multe valori pentru parametrul n_neighbors pentru a vedea cum influențează performanța modelului.
